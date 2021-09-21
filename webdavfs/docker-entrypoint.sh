@@ -16,6 +16,8 @@ PASSWORD=${PASSWORD:-"this-is-secrete"}
 
 mkdir -p $MPATH
 
+echo "Remove Lockfile webdavfs-mnt.pid to make sure webdav can start "
+rm -rf /var/run/mount.davfs/webdavfs-mnt.pid
 
 
 # Check variables and defaults
