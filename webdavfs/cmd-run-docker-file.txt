@@ -1,0 +1,7 @@
+docker build t webdav .
+
+docker run -it --rm \
+    --device /dev/fuse \
+    --cap-add SYS_ADMIN \
+    --security-opt "apparmor=unconfined" \
+    webdav bash

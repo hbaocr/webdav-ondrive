@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  webdav:
+    build:
+      context: ./webdavfs/
+      dockerfile: Dockerfile
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - "/dev/fuse"
+    security_opt:
+      - "apparmor=unconfined"
+    
+    environment:
+      USERNAME: ${USERNAME}
+      PASSWORD: ${PASSWORD}
+      ONEDRIVE_URL: ${ONEDRIVE_URL}
+    
+    command: ./check-mount-each-min.sh
