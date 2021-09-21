@@ -1,3 +1,6 @@
+#The --device, --cap-add and --security-opt options and their values are to make sure that 
+#the container will be able to make available the WebDAV resource using FUSE
+
 version: "3.8"
 services:
   webdav:
